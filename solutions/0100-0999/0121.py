@@ -20,3 +20,9 @@ class Solution:
             elif prices[i] - buy > profit:
                 profit = prices[i] - buy
         return profit
+    
+sol_obj = Solution()
+# values = [7,1,5,3,6,4]
+values = [7,6,4,3,1]
+result = sol_obj.maxProfit(values)
+print(result)
