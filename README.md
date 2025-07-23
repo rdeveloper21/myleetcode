@@ -1,1 +1,1 @@
-This repo contains solutioons to some of the leetcode problems.
+This repo contains solutions to some of the leetcode problems.
