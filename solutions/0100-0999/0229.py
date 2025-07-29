@@ -20,7 +20,7 @@ def majorityElement(nums: List[int]) -> List[int]:
     cnt1, cnt2 = 0, 0
     el1, el2 = None, None 
     
-    # Applying the algorithm
+    # Applying the Extended Boyer Moore’s Voting Algorithm
     for i in range(n):
         if cnt1 == 0 and el2 != nums[i]:
             cnt1 = 1
