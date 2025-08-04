@@ -16,6 +16,27 @@ Explanation: Number 9 is repeated and number 5 is missing so the answer is [9,5]
 '''
 from typing import List
 def findMissingAndRepeatedValues(grid: List[List[int]]) -> List[int]:
-    
-    
-    return
+    n = len(grid)
+    m = len(grid[0])
+    hash = [0] * ((n * n) + 1)
+
+    for i in range(n):
+        for j in range(m):
+            hash[grid[i][j]] += 1
+
+    repeating = -1 
+    missing = -1
+    for i in range(1, ((n * n) + 1)):
+        if hash[i] == 2:
+            repeating = i
+        elif hash[i] == 0:
+            missing = i
+        
+        if repeating != -1 and missing != -1:
+            break
+    return [repeating, missing]
+
+if __name__ == '__main__':
+    grid = [[1,3],[2,2]]
+    result = findMissingAndRepeatedValues(grid)
+    print(f"Following is the repeating and missing values: {result}")

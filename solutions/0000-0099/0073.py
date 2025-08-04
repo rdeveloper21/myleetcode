@@ -45,6 +45,34 @@ def zeroMatrix(matrix):
     return matrix
 
 
+# Another approach using Queues
+from typing import List
+def setZeroes(matrix: List[List[int]]) -> None:
+    """
+    Do not return anything, modify matrix in-place instead.
+    """
+    from collections import deque
+    q = deque()
+    m, n = len(matrix), len(matrix[0])
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                q.append((i,j))
+
+    # Emptying 
+    while q:
+        x, y = q.popleft()
+        # Make the row 0
+        for j in range(n):
+            matrix[x][j] = 0
+        
+        # Make the column 0
+        for i in range(m):
+            matrix[i][y] = 0
+
+
+
+
 if __name__ == '__main__':
     nums = [[0,1,2,0],[3,4,5,2],[1,3,1,5],[3,4,5,6]]
 

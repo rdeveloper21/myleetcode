@@ -23,7 +23,9 @@ then that element is the required answer.
 def findDuplicate(nums: List[int]) -> int:
     n = len(nums)
     freq = [0] * (n + 1)
+    print(freq)
     for i in range(n):
+        print(f"{i}: {freq}")
         if freq[nums[i]] == 0:
             freq[nums[i]] = 1
         else:
@@ -31,6 +33,6 @@ def findDuplicate(nums: List[int]) -> int:
     return 0
 
 if __name__ == "__main__":
-    # arr = [1, 3, 4, 2, 3]
-    arr = [3,3,3,3,3]
+    arr = [1, 3, 4, 2, 3]
+    # arr = [3,3,3,3,3]
     print("The duplicate element is ", findDuplicate(arr))
